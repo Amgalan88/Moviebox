@@ -1,8 +1,12 @@
-import Image from "next/image";
+"use client";
+
 import { StarIcon } from "../_components/icons/StarIcon";
 import { PlayIcon } from "../_components/icons/PlayIcon";
+import { useState } from "react";
 
 export const HeroSlider = () => {
+  const [trailerKey, setTrailerKey] = useState("R2Xubj7lazE");
+
   return (
     <div className="bg-white w-[1440px] h-[600px] flex items-center justify-between  mt-1 relative ">
       <img src="/Heroimage.jpg" className="w-full h-full" />
@@ -22,6 +26,15 @@ export const HeroSlider = () => {
         <button
           className="bg-white w-[145px] h-[40px] text-black cursor-pointer rounded-lg
         flex flex-row items-center pl-2 gap-2 "
+          disabled={!trailerKey}
+          onClick={() => {
+            if (!trailerKey) return;
+            window.open(
+              `https://www.youtube.com/watch?v=${trailerKey}`,
+              "_blank"
+            );
+            console.log("there is video", onclick);
+          }}
         >
           <PlayIcon />
           <p> Watch Trailer</p>

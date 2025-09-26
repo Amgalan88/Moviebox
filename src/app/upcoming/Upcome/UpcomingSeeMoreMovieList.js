@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import { MovieCard } from "../_components/MovieCard";
+import { MovieCard } from "../../_components/MovieCard";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
@@ -13,7 +15,7 @@ const options = {
   },
 };
 
-export const UpcomingMovieList = () => {
+export default function UpcomingSeeMoreMovieList() {
   const [count, setCount] = useState([]);
   const getData = async () => {
     const data = await fetch(url, options);
@@ -49,7 +51,7 @@ export const UpcomingMovieList = () => {
         </div>
       </div>
       <div className="grid grid-cols-5 grid-rows-2 gap-4">
-        {count.slice(0, 10).map((movie, index) => {
+        {count.map((movie, index) => {
           return (
             <MovieCard
               key={index}
@@ -63,4 +65,4 @@ export const UpcomingMovieList = () => {
       </div>
     </div>
   );
-};
+}
