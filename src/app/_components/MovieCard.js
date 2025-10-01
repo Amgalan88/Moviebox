@@ -1,10 +1,24 @@
 import Image from "next/image";
 import { StarIcon } from "./icons/StarIcon";
+import { router, useRouter } from "next/navigation";
+import { use } from "react";
 
 export const MovieCard = (props) => {
-  const { title, rate, images, date } = props;
+  const { title, rate, images, date, movieId } = props;
+  console.log("this is movie id", movieId);
+
+  const router = useRouter();
+  console.log("this is movie id", movieId);
+
+  const handleClickMovie = () => {
+    router.push(`movie-detail/${movieId}`);
+  };
+
   return (
-    <div className="h-[439px] w-[229.73px]  bg-zinc-100 rounded-lg ">
+    <div
+      className="h-[439px] w-[229.73px]  bg-zinc-100 rounded-lg cursor-pointer"
+      onClick={handleClickMovie}
+    >
       <div className="h-[340px] w-[229.73px]">
         {" "}
         <img

@@ -1,12 +1,10 @@
-"use client";
-
 import Image from "next/image";
-import { MovieCard } from "../../_components/MovieCard";
+import { MovieCard } from "../_components/MovieCard";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { HeroSection } from "./HeroSection";
 
 const url = "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1";
-
 const options = {
   method: "GET",
   headers: {
@@ -16,7 +14,7 @@ const options = {
   },
 };
 
-export default function UpcomingSeeMoreMovieList() {
+export const Moredetail = () => {
   const [count, setCount] = useState([]);
   const getData = async () => {
     const data = await fetch(url, options);
@@ -29,29 +27,22 @@ export default function UpcomingSeeMoreMovieList() {
   }, []);
 
   return (
-    <div className=" w-[1277px] m-auto mt-[52px] flex flex-col gap-5 ">
-      <div>
-        <div className="flex flex-row justify-between">
-          <div className="h-[32px] w-[250px] bg-zinc-100 rounded-lg pb-1">
-            {" "}
-            <p className="text-2xl text-foreground"> Upcoming </p>
-          </div>
+    <div className="max-w-[1080px] mh-[524px] bg-neutral-200 m-auto ">
+      <div className="max-w-[1080px] h-[72px] bg-neutral-300 flex flex-row justify-around ">
+        <div className="flex flex-col">
+          <div>awd</div>
+          <div>awd</div>
+        </div>
+        <div className="flex flex-col">
+          <div>awd</div>
+          <div>awd</div>
+          <div>awd</div>
         </div>
       </div>
-      <div className="grid grid-cols-5 grid-rows-2 gap-4">
-        {count.map((movie, index) => {
-          return (
-            <MovieCard
-              key={index}
-              title={movie.title}
-              rate={movie.vote_average}
-              images={movie.backdrop_path}
-              date={movie.release_date}
-              movieId={movie.id}
-            />
-          );
-        })}
+      <div className="max-w-[1080px] h-[428px] bg-neutral-300 flex flex-row justify-between">
+        <div>awd</div>
+        <div>awd</div>
       </div>
     </div>
   );
-}
+};
