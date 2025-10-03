@@ -5,10 +5,8 @@ import { use } from "react";
 
 export const MovieCard = (props) => {
   const { title, rate, images, date, movieId } = props;
-  console.log("this is movie id", movieId);
 
   const router = useRouter();
-  console.log("this is movie id", movieId);
 
   const handleClickMovie = () => {
     router.push(`movie-detail/${movieId}`);

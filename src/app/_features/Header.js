@@ -5,7 +5,7 @@ import { SearchIcon } from "../_components/icons/SearchIcon";
 
 export const Header = () => {
   return (
-    <div className="bg-white max-w-[1440px] h-[59px] flex flex-row items-center justify-between ">
+    <div className="bg-white w-full h-[59px] flex flex-row items-center justify-between ">
       <div className="pl-4 flex flex-row gap-1 items-center ">
         <img src="/Vector.png" alt="My photo" className="w-[20px] h-[20px] " />
         <p className="">Movie Z</p>

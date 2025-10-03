@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { MoonIcon } from "../_components/icons/MoonIcon";
 import { EmailIcon } from "../_components/icons/EmailIcon";

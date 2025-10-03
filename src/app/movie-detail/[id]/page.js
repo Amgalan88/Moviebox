@@ -6,6 +6,7 @@ import { Moredetail } from "@/app/_features/Moredetail";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { UpcomingMovieList } from "@/app/_features/UpcomingMovieList";
+import Image from "next/image";
 
 const options = {
   method: "GET",

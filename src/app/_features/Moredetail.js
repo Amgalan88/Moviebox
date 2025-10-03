@@ -3,8 +3,9 @@ import { MovieCard } from "../_components/MovieCard";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { HeroSection } from "./HeroSection";
+import { StarIcon } from "../_components/icons/StarIcon";
 
-const url = "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1";
+const url = "https://api.themoviedb.org/3/movie/${id}/credits?language=en-US";
 const options = {
   method: "GET",
   headers: {
@@ -27,21 +28,90 @@ export const Moredetail = () => {
   }, []);
 
   return (
-    <div className="max-w-[1080px] mh-[524px] bg-neutral-200 m-auto ">
-      <div className="max-w-[1080px] h-[72px] bg-neutral-300 flex flex-row justify-around ">
+    <div className="max-w-[1080px] h-auto bg-neutral-200 m-auto">
+      <div className="max-w-[1080px] h-[72px] bg-neutral-300 flex flex-row justify-between p-2 mt-4">
         <div className="flex flex-col">
-          <div>awd</div>
-          <div>awd</div>
+          <div>Wicked</div>
+          <div>2024.11.26 · PG · 2h 40m</div>
         </div>
-        <div className="flex flex-col">
-          <div>awd</div>
-          <div>awd</div>
-          <div>awd</div>
+        <div className="flex flex-col ">
+          <div>Rating</div>
+          <div>
+            <StarIcon />
+          </div>
+          <div>37k</div>
         </div>
       </div>
       <div className="max-w-[1080px] h-[428px] bg-neutral-300 flex flex-row justify-between">
-        <div>awd</div>
-        <div>awd</div>
+        <div
+          className="w-[290px] h-[428px]
+            bg-amber-100"
+        ></div>
+        <div
+          className="w-[760px] h-[428px]
+            bg-amber-100"
+        ></div>
+      </div>
+
+      <div
+        className="w-[1080px] h-[271px]
+            bg-amber-100 mt-4 flex-col gap-2"
+      >
+        <div className=" flex flex-row">
+          <div
+            className="w-[77px] h-[20px]
+            bg-amber-300"
+          >
+            fantastic
+          </div>
+          <div
+            className="w-[77px] h-[20px]
+            bg-amber-300"
+          >
+            fantastic
+          </div>
+          <div
+            className="w-[77px] h-[20px]
+            bg-amber-300"
+          >
+            fantastic
+          </div>
+          <div
+            className="w-[77px] h-[20px]
+            bg-amber-300"
+          >
+            fantastic
+          </div>
+        </div>
+
+        <div
+          className="w-[1080px] h-[48px]
+            bg-amber-200 mt-4 "
+        >
+          awdawd
+        </div>
+
+        <div
+          className="w-[1080px] h-[163px]
+            bg-amber-200 mt-4 "
+        >
+          awdawd
+        </div>
+      </div>
+      <div
+        className="w-[1080px] h-[500.88px]
+            bg-amber-200 mt-4 flex flex-col"
+      >
+        <div className="w-full h-9 bg-transparent flex justify-between">
+          <p>More like this</p>
+          <button className="bg-amber-900 text-white">See more</button>
+          <div
+            className="flex flex-row justify-center content-center
+          gap-4 w-[190px] h-[372.38px] mt-3"
+          >
+            <MovieCard />
+          </div>
+        </div>
       </div>
     </div>
   );
